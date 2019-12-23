@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NLog;
 using NzbDrone.Core.DecisionEngine;
+using NzbDrone.Core.Download;
 using NzbDrone.Core.Parser.Model;
 
 namespace NzbDrone.Core.MediaFiles.TrackImport.Specifications
@@ -17,7 +18,7 @@ namespace NzbDrone.Core.MediaFiles.TrackImport.Specifications
             _logger = logger;
         }
 
-        public Decision IsSatisfiedBy(LocalAlbumRelease localAlbumRelease)
+        public Decision IsSatisfiedBy(LocalAlbumRelease localAlbumRelease, DownloadClientItem downloadClientItem)
         {
             double dist;
             string reasons;

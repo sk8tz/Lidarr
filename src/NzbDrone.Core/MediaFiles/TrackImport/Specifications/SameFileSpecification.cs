@@ -15,7 +15,7 @@ namespace NzbDrone.Core.MediaFiles.TrackImport.Specifications
             _logger = logger;
         }
 
-        public Decision IsSatisfiedBy(LocalTrack localTrack)
+        public Decision IsSatisfiedBy(LocalTrack localTrack, DownloadClientItem downloadClientItem)
         {
             var trackFiles = localTrack.Tracks.Where(e => e.TrackFileId != 0).Select(e => e.TrackFile).ToList();
 
